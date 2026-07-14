@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roberts Mobile Detailing — We come to you. Kansas City, MO</title>
+<meta name="description" content="Mobile auto detailing in Kansas City. Interior, exterior, pet hair removal. We come to your driveway. Call (816) 301-1074.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Karla:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SWAP THESE FOR EACH NEW CLIENT — nothing else needs to change
+   ============================================================ */
+:root{
+  --ink:#0B0E10;
+  --panel:#141A1E;
+  --line:#232C31;
+  --paper:#F3F5F5;
+  --muted:#93A2A9;
+  --sky:#7FD3F7;      /* the color of sky reflected in fresh clearcoat */
+  --chrome:linear-gradient(100deg,#5C6C74 0%,#C9DCE3 42%,#FFFFFF 50%,#C9DCE3 58%,#5C6C74 100%);
+  --r:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);color:var(--paper);
+  font-family:'Karla',system-ui,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+
+/* ---------- sticky call bar: the thing that actually makes money ---------- */
+.bar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,14,16,.82);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+.mark{font-family:'Archivo';font-weight:900;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+.mark span{color:var(--sky)}
+.callbtn{
+  font-family:'Space Mono',monospace;font-weight:700;font-size:14px;
+  background:var(--sky);color:#04171F;text-decoration:none;
+  padding:11px 16px;border-radius:var(--r);white-space:nowrap;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.callbtn:hover{transform:translateY(-1px);box-shadow:0 6px 22px -8px var(--sky)}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 70px;position:relative;overflow:hidden}
+.hero:before{ /* a single specular streak, like a shop light across a panel */
+  content:"";position:absolute;inset:-40% -10% auto;height:520px;
+  background:radial-gradient(60% 50% at 50% 0%,rgba(127,211,247,.16),transparent 70%);
+  pointer-events:none;
+}
+.eyebrow{
+  font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--sky);margin-bottom:22px;
+}
+h1{
+  font-family:'Archivo';font-weight:900;font-size:clamp(2.7rem,8.2vw,5.4rem);
+  line-height:.94;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:26px;
+}
+/* SIGNATURE: light travels across the headline the way it travels across wet paint */
+.gloss{
+  background:var(--chrome);background-size:280% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:sweep 5.5s ease-in-out infinite;
+}
+@keyframes sweep{0%,72%{background-position:170% 0}100%{background-position:-70% 0}}
+@media (prefers-reduced-motion:reduce){.gloss{animation:none;background-position:50% 0}}
+.lede{font-size:19px;color:var(--muted);max-width:46ch;margin-bottom:34px}
+.lede b{color:var(--paper);font-weight:700}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.btn{
+  font-family:'Space Mono',monospace;font-weight:700;font-size:15px;
+  padding:15px 26px;border-radius:var(--r);text-decoration:none;display:inline-block;
+  transition:transform .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-a{background:var(--sky);color:#04171F}
+.btn-b{border:1px solid var(--line);color:var(--paper)}
+.proof{
+  display:flex;gap:26px;flex-wrap:wrap;align-items:center;
+  font-family:'Space Mono',monospace;font-size:13px;color:var(--muted);
+}
+.proof b{color:var(--paper)}
+
+/* ---------- packages ---------- */
+section{padding:76px 0;border-top:1px solid var(--line)}
+h2{
+  font-family:'Archivo';font-weight:900;font-size:clamp(1.7rem,4.5vw,2.6rem);
+  text-transform:uppercase;letter-spacing:-.01em;line-height:1;margin-bottom:12px;
+}
+.sub{color:var(--muted);margin-bottom:42px;max-width:52ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:28px 26px;display:flex;flex-direction:column;
+}
+.card.pick{border-color:var(--sky)}
+.tag{
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sky);margin-bottom:16px;
+}
+.card h3{font-family:'Archivo';font-weight:700;font-size:1.35rem;margin-bottom:6px}
+.price{
+  font-family:'Space Mono',monospace;font-size:2.1rem;font-weight:700;
+  margin-bottom:20px;letter-spacing:-.02em;
+}
+.price small{font-size:13px;color:var(--muted);font-weight:400;letter-spacing:0}
+.card ul{list-style:none;margin-bottom:26px;flex:1}
+.card li{padding:9px 0 9px 22px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+.card li:last-child{border-bottom:0}
+.card li:before{content:"";position:absolute;left:0;top:17px;width:9px;height:9px;border-radius:50%;background:var(--sky);opacity:.55}
+
+/* ---------- before / after ---------- */
+.ba{
+  position:relative;aspect-ratio:16/10;border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;cursor:ew-resize;user-select:none;background:var(--panel);
+}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba .after{clip-path:inset(0 0 0 var(--split,50%))}
+.ba .handle{
+  position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;background:var(--paper);
+  box-shadow:0 0 18px rgba(0,0,0,.6);
+}
+.ba .handle:after{
+  content:"⇄";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:42px;height:42px;border-radius:50%;background:var(--paper);color:var(--ink);
+  display:grid;place-items:center;font-size:16px;
+}
+.ba .lbl{
+  position:absolute;bottom:12px;font-family:'Space Mono',monospace;font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;background:rgba(11,14,16,.8);
+  padding:6px 10px;border-radius:var(--r);
+}
+.ba .lbl.l{left:12px}.ba .lbl.r{right:12px;color:var(--sky)}
+
+/* ---------- reviews ---------- */
+.quote{
+  background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--sky);
+  border-radius:var(--r);padding:26px;
+}
+.quote p{margin-bottom:16px}
+.who{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.06em}
+
+/* ---------- book ---------- */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+label{display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+input,select,textarea{
+  width:100%;background:var(--panel);border:1px solid var(--line);color:var(--paper);
+  padding:13px 14px;border-radius:var(--r);font:inherit;font-size:16px;margin-bottom:18px;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--sky);outline:none}
+button{
+  width:100%;background:var(--sky);color:#04171F;border:0;cursor:pointer;
+  font-family:'Space Mono',monospace;font-weight:700;font-size:15px;padding:16px;border-radius:var(--r);
+}
+.area li{padding:12px 0;border-bottom:1px solid var(--line);list-style:none;font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:760px){
+  .book{grid-template-columns:1fr;gap:34px}
+  .hero{padding:60px 0 50px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <div class="mark">Roberts <span>Mobile Detailing</span></div>
+  <a class="callbtn" href="tel:+18163011074">Call (816) 301-1074</a>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Kansas City · We come to your driveway</div>
+  <h1>Your car,<br><span class="gloss">back to new.</span></h1>
+  <p class="lede">Full interior and exterior detailing at your home or office. <b>Pet hair, spills, road grime, swirl marks</b> — gone by the time you finish work.</p>
+  <div class="cta">
+    <a class="btn btn-a" href="tel:+18163011074">Call now</a>
+    <a class="btn btn-b" href="#book">Book online</a>
+  </div>
+  <div class="proof">
+    <span><b>5.0 ★</b> · 67 Google reviews</span>
+    <span><b>Same-week</b> appointments</span>
+    <span><b>We bring</b> water &amp; power</span>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <h2>Packages</h2>
+  <p class="sub">Flat pricing. No surprises when we hand back the keys. Trucks, vans and SUVs add $30.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="tag">Inside only</div>
+      <h3>Interior Reset</h3>
+      <div class="price">$149 <small>/ 2 hrs</small></div>
+      <ul>
+        <li>Deep vacuum, seats and trunk</li>
+        <li>Shampoo carpets and upholstery</li>
+        <li>Pet hair removal</li>
+        <li>Dash, vents, door panels</li>
+        <li>Interior and exterior glass</li>
+      </ul>
+      <a class="btn btn-b" href="#book">Book this</a>
+    </div>
+    <div class="card pick">
+      <div class="tag">Most booked</div>
+      <h3>The Full Detail</h3>
+      <div class="price">$249 <small>/ 4 hrs</small></div>
+      <ul>
+        <li>Everything in Interior Reset</li>
+        <li>Hand wash, wheels and tires</li>
+        <li>Clay bar and machine polish</li>
+        <li>6-month sealant on the paint</li>
+        <li>Trim and headlight restoration</li>
+      </ul>
+      <a class="btn btn-a" href="#book">Book this</a>
+    </div>
+    <div class="card">
+      <div class="tag">Long-term</div>
+      <h3>Ceramic Coating</h3>
+      <div class="price">$699 <small>/ full day</small></div>
+      <ul>
+        <li>Full paint correction</li>
+        <li>Multi-stage swirl removal</li>
+        <li>3-year ceramic coating</li>
+        <li>Water beads off, dirt won't stick</li>
+        <li>Washing gets easy for years</li>
+      </ul>
+      <a class="btn btn-b" href="#book">Book this</a>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Drag to see the difference</h2>
+  <p class="sub">Real car, real driveway, four hours apart. Drag the bar across.</p>
+  <div class="ba" id="ba">
+    <!-- REPLACE: before.jpg and after.jpg — pull these from the client's Google photos -->
+    <img class="before" src="before.jpg" alt="Car interior before detailing">
+    <img class="after" src="after.jpg" alt="Car interior after detailing">
+    <div class="lbl l">Before</div>
+    <div class="lbl r">After</div>
+    <div class="handle"></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What people say</h2>
+  <p class="sub">Every review below is on our Google listing.</p>
+  <div class="grid">
+    <div class="quote"><p>[Paste a real Google review here — keep it short.]</p><div class="who">— First name L. · Google</div></div>
+    <div class="quote"><p>[Paste a real Google review here — keep it short.]</p><div class="who">— First name L. · Google</div></div>
+    <div class="quote"><p>[Paste a real Google review here — keep it short.]</p><div class="who">— First name L. · Google</div></div>
+  </div>
+</div></section>
+
+<section id="book"><div class="wrap">
+  <div class="book">
+    <div>
+      <h2>Book a detail</h2>
+      <p class="sub">Send this and we'll text you back with a time. Usually within the hour.</p>
+      <!-- REPLACE action with the client's Formspree endpoint: formspree.io -->
+      <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+        <label for="n">Name</label><input id="n" name="name" required>
+        <label for="p">Phone</label><input id="p" name="phone" type="tel" required>
+        <label for="v">Vehicle</label><input id="v" name="vehicle" placeholder="2019 Honda Pilot">
+        <label for="s">Package</label>
+        <select id="s" name="package">
+          <option>Interior Reset — $149</option>
+          <option>The Full Detail — $249</option>
+          <option>Ceramic Coating — $699</option>
+          <option>Not sure yet</option>
+        </select>
+        <label for="m">Anything we should know?</label>
+        <textarea id="m" name="notes" rows="3" placeholder="Dog sheds a lot, coffee spill on the passenger seat…"></textarea>
+        <button type="submit">Request my appointment</button>
+      </form>
+    </div>
+    <div>
+      <h2>Where we go</h2>
+      <p class="sub">Free travel inside the loop below. Farther out, just ask.</p>
+      <ul class="area">
+        <li>South Kansas City &amp; Waldo</li>
+        <li>Martin City &amp; Red Bridge</li>
+        <li>Grandview &amp; Belton</li>
+        <li>Overland Park &amp; Leawood</li>
+        <li>Lee's Summit</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>Roberts Mobile Detailing · Kansas City, MO</div>
+  <div><a href="tel:+18163011074">(816) 301-1074</a></div>
+</div></footer>
+
+<script>
+// before/after slider — pointer + keyboard
+(function(){
+  const ba = document.getElementById('ba');
+  if(!ba) return;
+  let down = false;
+  const move = e => {
+    const r = ba.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    ba.style.setProperty('--split', Math.max(0, Math.min(100, x)) + '%');
+  };
+  ba.addEventListener('pointerdown', e => { down = true; ba.setPointerCapture(e.pointerId); move(e); });
+  ba.addEventListener('pointermove', e => { if(down) move(e); });
+  ba.addEventListener('pointerup', () => down = false);
+  ba.tabIndex = 0;
+  ba.addEventListener('keydown', e => {
+    const cur = parseFloat(getComputedStyle(ba).getPropertyValue('--split')) || 50;
+    if(e.key === 'ArrowLeft')  ba.style.setProperty('--split', Math.max(0, cur - 4) + '%');
+    if(e.key === 'ArrowRight') ba.style.setProperty('--split', Math.min(100, cur + 4) + '%');
+  });
+})();
+</script>
+</body>
+</html>
